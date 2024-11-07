@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+   .cont{
+    border: 2px solid black;
+    height: 50px;
+    background-color: brown;
+ 
+   } 
+   .childcont{
+    border: 2px solid black;
+    height: 30px;
+    background-color: brown;
+    padding: 2px;
+    position: relative;
+    top: 20%;
+   }
+   .child{
+    border: 2px solid black;
+    height: 10px;
+    background-color: brown;
+    padding: 2px;
+    position: relative;
+    top: 20%;
+   }
+</style>
+<body>
+    <div class="cont">
+        <div class="childcont">
+            <div class="child">
+I am child
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function getcolor(){
+    let val1 = Math.ceil(0+ Math.random()*255)
+    let val2 = Math.ceil(0+ Math.random()*255)
+    let val3 = Math.ceil(0+ Math.random()*255)
+    return `rgb(${val1},${val2},${val3})`
+}
+//setinterval
+       setInterval(() => {
+        document.querySelector(".childcont").style.backgroundColor= getcolor()
+       }, 2000);
+       //setTimeout
+       setTimeout(() => {
+        document.querySelector(".child").style.backgroundColor= getcolor()
+       }, 1000);
+
+       
+
+
+    </script>
+</body>
+</html>

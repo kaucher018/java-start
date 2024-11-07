@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("viewport")
+         
+        setTimeout(() => {
+            console.log("viewport in side")
+        }, 2000);
+        console.log("viewport2")
+//settime out print the element after 2s;
+
+//callback : pass funtion as a varriable
+const callback =(arg) => {
+    console.log(arg)
+  
+}
+
+
+const loadScript = ( src,callback) => {
+    let sc= document.createElement("script");
+    sc.src= src;
+    sc.onload = callback("viewport from cllback");
+  
+  
+}
+loadScript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.j",callback)
+
+
+//PROMISE
+
+let prom1= new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        console.log("Iam done")
+        resolve("kaucher")
+    }, 2000);
+})
+
+prom1.then((a) => {
+    console.log(a)
+  
+}
+)
+
+
+
+    </script>
+</body>
+</html>
